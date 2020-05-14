@@ -3,14 +3,32 @@ package org.wecancodeit.fizzbuzz;
 
 public class FizzBuzz {
 
-    public String say(int numberToTranslate) {
+    public String say(int number) {
+        String name = "";
+        if (number < 0) {
+            return "Please select a positive number";
+        }
+        name += returnStrIfDivisibleBy(number, 3, "Fizz");
+        name += returnStrIfDivisibleBy(number, 5, "Buzz");
+        name += returnStrIfDivisibleBy(number, 11, "BANG");
+        if (name.length() == 0) {
+            return "" + number;
+        } else {
+            return name;
+        }
+    }
 
-        if(numberToTranslate % 3 == 0) {
-            return "Fizz";
+    public String returnStrIfDivisibleBy(int i, int number, String str) {
+        if ((i % number) == 0) {
+            return str;
+        } else {
+            return "";
         }
-        if(numberToTranslate == 5){
-            return "Buzz";
+    }
+
+    public void fizzBuzzRange(int minValue, int maxValue) {
+        for (int i = minValue; i <= maxValue; i++) {
+            System.out.println(say(i));
         }
-        return "" + numberToTranslate;
     }
 }

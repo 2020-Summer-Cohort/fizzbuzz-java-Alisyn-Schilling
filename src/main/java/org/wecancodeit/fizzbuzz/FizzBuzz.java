@@ -25,10 +25,4 @@ public class FizzBuzz {
             return "";
         }
     }
-
-    public void fizzBuzzRange(int minValue, int maxValue) {
-        for (int i = minValue; i <= maxValue; i++) {
-            System.out.println(say(i));
-        }
-    }
 }
